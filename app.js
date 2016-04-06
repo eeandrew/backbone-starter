@@ -1,4 +1,4 @@
-$(document).ready(function(){
+define(['jquery','backbone'],function($,Backbone){
 	var Friend = Backbone.Model.extend({
 		name:null
 	});
@@ -27,5 +27,5 @@ $(document).ready(function(){
 		},
 	});
 
-	var appView = new AppView;
-})
+	return AppView;
+});

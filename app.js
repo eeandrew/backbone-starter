@@ -1,4 +1,4 @@
-define(['jquery','backbone'],function($,Backbone){
+define(['jquery','backbone','text!templates/friend_item.tpl'],function($,Backbone,FriendItemTPL){
 	var Friend = Backbone.Model.extend({
 		name:null
 	});
@@ -18,7 +18,7 @@ define(['jquery','backbone'],function($,Backbone){
 			'click #add-friend-btn':'onAddFriendBtnClick'
 		},
 		addOneFriend: function(model){
-			$('#world-list').append("<li>" + model.get('name') + '</li>');
+			$('#world-list').append(FriendItemTPL);
 		},
 		onAddFriendBtnClick : function() {
 			var name = $('#name-input').val() || 'No Name';
